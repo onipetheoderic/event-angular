@@ -63,7 +63,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of promotions">
+        <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of promotions">
           <app-info-card (greetEvent)="handleModal()" [title]="item.title">
           </app-info-card>
         </div>
