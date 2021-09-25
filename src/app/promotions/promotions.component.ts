@@ -7,6 +7,7 @@ import { ICard } from '../interface/interface';
 })
 export class PromotionsComponent implements OnInit {
   showOverlay: boolean = false;
+  showSidebar: boolean = false;
 
   constructor() {}
 
@@ -14,6 +15,10 @@ export class PromotionsComponent implements OnInit {
 
   handleModal() {
     this.showOverlay = !this.showOverlay;
+  }
+
+  handleSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
 
   promotions: ICard[] = [

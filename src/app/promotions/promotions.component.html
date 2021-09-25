@@ -55,17 +55,44 @@
       </p>
     </div>
   </div>
-  <div id="wrapper">
-    <div class="container">
-      <div class="hamburger">
-        <svg-icon src="../../assets/vectors/hamburger.svg" [stretch]="false">
-        </svg-icon>
-      </div>
+  <div class="parent-content">
+    <div
+      class="sidebar"
+      *ngIf="showSidebar"
+      [ngStyle]="{ width: showSidebar ? '20%' : '0%' }"
+    >
+      <div class="pages">
+        <div class="link-cont">
+          <img
+            src="../../assets/vectors/off-canvas-homepage.svg"
+            class="icon"
+          />
+          <a routerLink="/home" routerLinkActive="active">Home page</a>
+        </div>
 
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of promotions">
-          <app-info-card (greetEvent)="handleModal()" [title]="item.title">
-          </app-info-card>
+        <div class="link-cont">
+          <img src="../../assets/vectors/off-canvas-gift.svg" class="icon" />
+          <a routerLink="/promotions" routerLinkActive="active">Promotions</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper" [ngStyle]="{ width: showSidebar ? '80%' : '100%' }">
+      <div class="container">
+        <div class="hamburger" (click)="handleSidebar()" *ngIf="!showSidebar">
+          <svg-icon src="../../assets/vectors/hamburger.svg" [stretch]="false">
+          </svg-icon>
+        </div>
+        <div class="hamburger" (click)="handleSidebar()" *ngIf="showSidebar">
+          <svg-icon src="../../assets/vectors/x.svg" [stretch]="false">
+          </svg-icon>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of promotions">
+            <app-info-card (greetEvent)="handleModal()" [title]="item.title">
+            </app-info-card>
+          </div>
         </div>
       </div>
     </div>
