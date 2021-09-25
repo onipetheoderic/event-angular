@@ -1,0 +1,29 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let item of slides">
+    <div class="slider">
+      <div class="advert-parent">
+        <h1 class="title">{{ item.title }}</h1>
+        <p class="text">{{ item.text }}</p>
+
+        <div class="button">SIGN UP</div>
+      </div>
+      <img
+        src="../../assets/images/{{ item.imageFile }}"
+        class="carousel-images"
+      />
+      <img src="../../assets/images/image-1.png" class="flying-image" />
+      <!-- image-1.png -->
+    </div>
+  </ng-template>
+  <!-- <ng-template carouselSlide>
+    <div class="slider">
+      <img src="../../assets/images/back-2.jpg" class="carousel-images" />
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slider">
+      <img src="../../assets/images/back-3.png" class="carousel-images" />
+      <div></div>
+    </div>
+  </ng-template> -->
+</owl-carousel-o>
