@@ -1,0 +1,100 @@
+.info-card-parent {
+  width: 100%;
+  height: 322px;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.info-image {
+  width: 100%;
+  height: 322px;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 30.21%,
+    rgba(0, 0, 0, 0.518634) 74.68%,
+    #000000 100%
+  );
+}
+
+.content {
+  width: 82%;
+  margin-left: 9%;
+  position: absolute;
+  height: 100px;
+
+  bottom: 0;
+}
+
+.title {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 114.4%;
+  /* identical to box height, or 15px */
+
+  color: #ffb546;
+}
+
+.description {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 114.4%;
+  /* or 13px */
+
+  color: #ffffff;
+}
+
+.button {
+  position: absolute;
+  width: 91px;
+  height: 23px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 19.6792px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.button:hover {
+  position: absolute;
+  width: 91px;
+  height: 23px;
+  background: #fbdc48;
+  border: 1px solid #fbdc48;
+  border-radius: 19.6792px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+.btn-text {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 8.99623px;
+  line-height: 141.4%;
+}
+
+.btn-text:hover {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 8.99623px;
+  line-height: 141.4%;
+}
