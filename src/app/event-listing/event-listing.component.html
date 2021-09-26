@@ -1,0 +1,164 @@
+<div class="overall">
+  <div id="overlay" *ngIf="showOverlay" (click)="handleModal()"></div>
+  <div id="custom-modal" *ngIf="showOverlay">
+    <div class="content">
+      <h2>Update Event</h2>
+      <form id="loginForm" (submit)="onSubmit($event)">
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            id="floatingInput"
+            type="name"
+            value="{{ currentEvent.name }}"
+            placeholder="I will be getting married"
+            required
+            name="name"
+          />
+          <label for="floatingInput">Name of Event</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            value="{{ currentEvent.date }}"
+            id="floatingdate"
+            type="date"
+            placeholder="date"
+            required
+            name="date"
+          />
+          <label for="floatingdate">Date of event</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            id="floatinglocation"
+            value="{{ currentEvent.location }}"
+            type="text"
+            placeholder="No 33 patrick bokkor, Nigeria"
+            required
+            name="location"
+          />
+          <label for="floatinglocation">Location of event</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <button class="btn btn-success" type="button" (click)="saveWeather()">
+            Get Weather for the selected date
+          </button>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [ngStyle]="{ disabled: loading ? 'true' : 'false' }"
+        >
+          Update Event
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="parent-content">
+    <div
+      class="sidebar"
+      *ngIf="showSidebar"
+      [ngStyle]="{ width: showSidebar ? '20%' : '0%' }"
+    >
+      <div class="pages">
+        <div class="link-cont">
+          <img
+            src="../../assets/vectors/off-canvas-homepage.svg"
+            class="icon"
+          />
+          <a routerLink="/home" routerLinkActive="active">Home page</a>
+        </div>
+
+        <div class="link-cont">
+          <img src="../../assets/vectors/off-canvas-gift.svg" class="icon" />
+          <a routerLink="/promotions" routerLinkActive="active">Promotions</a>
+        </div>
+
+        <div class="link-cont">
+          <img src="../../assets/vectors/off-canvas-gift.svg" class="icon" />
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+        </div>
+
+        <div class="link-cont">
+          <img src="../../assets/vectors/off-canvas-gift.svg" class="icon" />
+          <a routerLink="/create_event" routerLinkActive="active"
+            >Create Event Listing</a
+          >
+        </div>
+
+        <div class="link-cont">
+          <img src="../../assets/vectors/off-canvas-gift.svg" class="icon" />
+          <a routerLink="/event_listing" routerLinkActive="active"
+            >Event Listing</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper" [ngStyle]="{ width: showSidebar ? '80%' : '100%' }">
+      <div class="container">
+        <div class="hamburger" (click)="handleSidebar()" *ngIf="!showSidebar">
+          <svg-icon src="../../assets/vectors/hamburger.svg" [stretch]="false">
+          </svg-icon>
+        </div>
+        <div class="hamburger" (click)="handleSidebar()" *ngIf="showSidebar">
+          <svg-icon src="../../assets/vectors/x.svg" [stretch]="false">
+          </svg-icon>
+        </div>
+
+        <div class="row">
+          <!-- Modal -->
+
+          <div class="btn-section">
+            <a href="/create_event" class="btn btn-primary" type="submit">
+              Quickly Create an Event
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name of Event</th>
+                  <th>Expected Weather</th>
+                  <th>Location</th>
+                  <th>Date</th>
+                  <th>Admin Tasks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let event of eventsList; index as i">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ event.name }}</td>
+                  <td>{{ event.expectedWeather }}</td>
+                  <td>{{ event.location }}</td>
+                  <td>{{ event.date }}</td>
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="editEvent(event); handleModal()"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      class="btn btn-danger"
+                      type="button"
+                      (click)="deleteEvent(event)"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

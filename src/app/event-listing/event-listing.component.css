@@ -1,0 +1,121 @@
+.overall {
+  width: 100%;
+  min-height: 100vh;
+  background: #e5e5e5;
+  position: relative;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.active {
+  font-weight: 800;
+}
+.sidebar {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #f9e292 0%, #fad73d 100%);
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  margin-left: 23px;
+  margin-top: 23px;
+}
+
+.parent-content {
+  display: flex;
+  flex-direction: row;
+}
+.row {
+  margin-top: 30px;
+}
+
+#wrapper .container {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  background: #e5e5e5;
+  min-height: 100vh;
+}
+.row {
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.hamburger {
+  padding-top: 30px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+  z-index: 20000; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#custom-modal {
+  position: absolute;
+  z-index: 200000;
+  width: 40%;
+  min-height: 60%;
+  background-color: white;
+  padding: 50;
+  margin-left: 30%;
+  margin-top: 49px;
+}
+
+#jumbotron {
+  height: 408px;
+  width: 100%;
+  background-image: url("../../assets/images/promo-full-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.icon {
+  width: 31px;
+  height: 31px;
+  margin-right: 13px;
+}
+.link-cont {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.content {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 42px;
+}
+
+#exitBox {
+  width: 33px;
+  height: 33px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-section {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.btn-danger {
+  margin-left: 20px;
+}
